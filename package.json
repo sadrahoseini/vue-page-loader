@@ -1,0 +1,34 @@
+{
+    "name": "sadrix-vue-page-loader",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./dist/index.js",
+    "scripts": {
+        "dev": "vue serve NiceHandsomeButton.vue",
+        "build": "bili --name index --plugin vue --vue.css false"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sadrix/vue-page-loader.git"
+    },
+    "files": [
+        "dist/*"
+    ],
+    "keywords": [
+        "vue",
+        "loader",
+        "progress"
+    ],
+    "author": "sadrix",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sadrix/vue-page-loader/issues"
+    },
+    "homepage": "https://github.com/sadrix/vue-page-loader#readme",
+    "devDependencies": {
+        "@vue/compiler-sfc": "^3.0.0-beta.4",
+        "bili": "^4.9.3",
+        "rollup-plugin-vue": "^6.0.0-alpha.5",
+        "vue-template-compiler": "^2.6.11"
+    }
+}
