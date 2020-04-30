@@ -1,6 +1,6 @@
 {
     "name": "sadrix-vue-page-loader",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "description": "Simple customizeable page loader component with self state manager module for Vue.js.",
     "main": "./src/index.js",
     "scripts": {
