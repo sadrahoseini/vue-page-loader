@@ -7,7 +7,9 @@ Simple customizeable page loader component with self state manager module for Vu
 
 ## 🎉 version 1 released 🎈
 
-## How to use
+---
+
+## First steps
 ### 1. Instalation
 Install package in your project with this command
 
@@ -16,19 +18,33 @@ npm i -S sadrix-vue-page-loader
 ```
 
 ### 2. Import
-Import package inside your Vuejs application config file and let you global `Vue` instance use it as a plugin:
+Import package inside your Vuejs application config file and let you global **`Vue`** instance use it as a plugin.
+
+>The only **important notice** is this plugin use **`Vuex`** package as state manager and you need to import this package first and config it, then pass you store param as an option property with name of **`store`** (with small `s`) and plugin will automaticaly add needed mutaction, states and actions under namespace of **`pageLoader`**.
 
 ``` javascript
 import SadrixPageLoader from 'sadrix-page-loader';
 import Vue from 'vue';
+import store from './store/store';
+import router from './core/router';
+import Page from './layouts/page';
 
-Vue.use(SadrixPageLoader);
+// Let Vue use our plugin
+Vue.use(SadrixPageLoader, { store });
+
+// Create app
+new Vue({
+    el: '#app',
+    router,
+    store,
+    render: h => h(Page)
+});
 ```
 
 ### 3. Component
 Your done! Now easily can use `<page-loader/>` component any where inside your application.
 
-**example: in your `.vue` template file**
+* **example: in your `.vue` template file**
 
 ``` html
 <div>
@@ -68,6 +84,43 @@ Its easy! just pass `:rtl="true"`.
     <page-loader :rtl="true"/>
 </div>
 ```
+---
+## How to use
+For faster and easier usage and control on this loader, We add some custom property to `Vue` main module.
+You just need to call `showPageLoader(timeout)` when want loader show and how much it take (timeout) to fill window width in `milisecounds` (optionl). default timeout is `10 secounds` or `10000ms`.
+And when you want to hide loader easily type `hidePageLoader()`.
+
+* **example: show/hide page loader for and api request**
+``` html
+<script>
+import axios from 'axios';
+
+export default {
+    methods: {
+        callApi() {
+            // for example before making request we want
+            // to show the page loader and max in 6 secounds timeout
+            this.$showPageLoader();
+
+            // make request
+            axios.get('https://someurl.com')
+                // on success
+                .then(data => {
+                    // here we hide page loader
+                    this.$hidePageLoader();
+                })
+                // on error
+                .catch(error => {
+                    // here we hide page loader
+                    this.$hidePageLoader();
+                });
+        }
+    }
+}
+</script>
+```
+
+---
 
 
 build your amasing app with a beautiful page loader! 😉
