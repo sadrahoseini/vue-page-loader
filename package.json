@@ -1,8 +1,8 @@
 {
     "name": "sadrix-vue-page-loader",
-    "version": "1.0.0",
-    "description": "",
-    "main": "./dist/index.js",
+    "version": "1.0.6",
+    "description": "Simple customizeable page loader component with self state manager module for Vue.js.",
+    "main": "./src/index.js",
     "scripts": {
         "dev": "vue serve NiceHandsomeButton.vue",
         "build": "bili --name index --plugin vue --vue.css false"
@@ -12,7 +12,7 @@
         "url": "git+https://github.com/sadrix/vue-page-loader.git"
     },
     "files": [
-        "dist/*"
+        "src/*"
     ],
     "keywords": [
         "vue",
@@ -26,9 +26,8 @@
     },
     "homepage": "https://github.com/sadrix/vue-page-loader#readme",
     "devDependencies": {
-        "@vue/compiler-sfc": "^3.0.0-beta.4",
-        "bili": "^4.9.3",
-        "rollup-plugin-vue": "^6.0.0-alpha.5",
-        "vue-template-compiler": "^2.6.11"
+        "vue": "^2.6.11",
+        "vue-template-compiler": "^2.6.11",
+        "vuex": "^3.3.0"
     }
 }

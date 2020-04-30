@@ -15,7 +15,7 @@ export default {
             type: Boolean,
             default: false
         },
-        size: {
+        height: {
             type: Number,
             default: 3
         }
