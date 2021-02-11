@@ -18,7 +18,12 @@ export default {
         height: {
             type: Number,
             default: 3
-        }
+        },
+        zindex: {
+            type: Number,
+            default: 10000
+        },
+
     },
     computed: {
         styles() {
@@ -31,6 +36,7 @@ export default {
                 width: this.progress + '%',
                 transition: this.transition + 's ease-out',
                 backgroundColor: this.color,
+                zIndex: this.zindex
             }
         },
         ...mapState({
